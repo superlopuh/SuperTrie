@@ -8,16 +8,15 @@
 
 import Foundation
 
-class STNode<E: Hashable, N> {
+class STNode<N, E: Hashable> {
     typealias EdgeValueType = E
     typealias NodeValueType = N
     
-    var accepting: Bool
-    let nodeValue: N
-    var nextNodeDict: [E:STNode<E,N>] = [:]
+    // Only accepting nodes have values
+    let nodeValue: N?
+    var nextNodeDict: [E:STNode<N,E>] = [:]
     
-    init(accepting: Bool, value: N) {
-        self.accepting = accepting
+    init(value: N?) {
         self.nodeValue = value
     }
 }
