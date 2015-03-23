@@ -7,3 +7,30 @@
 //
 
 import Foundation
+
+class STTrie<N, E: Hashable> {
+    typealias EdgeValueType = E
+    typealias NodeValueType = N
+    
+    var root = STNode<N, E>(value: nil)
+    
+    init() {
+        
+    }
+    
+    func addWord<C : CollectionType where C.Generator.Element == E>(word: C, nodeValue: N) {
+        var currentNode = root
+        var gen = word.generate()
+        
+        while let character = gen.next() {
+            if currentNode.nextNodeDict[character] == nil {
+                // No child for this edge
+                let newNode = STNode<N,E>(value: nil)
+                currentNode.nextNodeDict[character] = newNode
+            }
+            currentNode = currentNode.nextNodeDict[character]!
+        }
+        
+        currentNode.nodeValue = nodeValue
+    }
+}
