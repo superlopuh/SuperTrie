@@ -14,7 +14,7 @@ class STNode<E: Hashable, N> {
     
     var accepting: Bool
     let nodeValue: N
-    var nextNodeDict: [E:N] = [:]
+    var nextNodeDict: [E:STNode<E,N>] = [:]
     
     init(accepting: Bool, value: N) {
         self.accepting = accepting
