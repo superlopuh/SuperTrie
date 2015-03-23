@@ -10,6 +10,7 @@
 		A6DCFE9D1AC05878007E86D1 /* SuperTrie.h in Headers */ = {isa = PBXBuildFile; fileRef = A6DCFE9C1AC05878007E86D1 /* SuperTrie.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6DCFEA31AC05878007E86D1 /* SuperTrie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6DCFE971AC05878007E86D1 /* SuperTrie.framework */; };
 		A6DCFEAA1AC05878007E86D1 /* SuperTrieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DCFEA91AC05878007E86D1 /* SuperTrieTests.swift */; };
+		A6DCFEB41AC059E7007E86D1 /* STTrie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DCFEB31AC059E7007E86D1 /* STTrie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		A6DCFEA21AC05878007E86D1 /* SuperTrieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperTrieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6DCFEA81AC05878007E86D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6DCFEA91AC05878007E86D1 /* SuperTrieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperTrieTests.swift; sourceTree = "<group>"; };
+		A6DCFEB31AC059E7007E86D1 /* STTrie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STTrie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				A6DCFE9C1AC05878007E86D1 /* SuperTrie.h */,
+				A6DCFEB31AC059E7007E86D1 /* STTrie.swift */,
 				A6DCFE9A1AC05878007E86D1 /* Supporting Files */,
 			);
 			path = SuperTrie;
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6DCFEB41AC059E7007E86D1 /* STTrie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +322,7 @@
 		A6DCFEAE1AC05878007E86D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -329,12 +334,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A6DCFEAF1AC05878007E86D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -400,6 +407,7 @@
 				A6DCFEAF1AC05878007E86D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6DCFEB01AC05878007E86D1 /* Build configuration list for PBXNativeTarget "SuperTrieTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +416,7 @@
 				A6DCFEB21AC05878007E86D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
