@@ -11,6 +11,7 @@
 		A6DCFEA31AC05878007E86D1 /* SuperTrie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6DCFE971AC05878007E86D1 /* SuperTrie.framework */; };
 		A6DCFEAA1AC05878007E86D1 /* SuperTrieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DCFEA91AC05878007E86D1 /* SuperTrieTests.swift */; };
 		A6DCFEB41AC059E7007E86D1 /* STTrie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DCFEB31AC059E7007E86D1 /* STTrie.swift */; };
+		A6DCFEB61AC05A05007E86D1 /* STNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DCFEB51AC05A05007E86D1 /* STNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		A6DCFEA81AC05878007E86D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6DCFEA91AC05878007E86D1 /* SuperTrieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperTrieTests.swift; sourceTree = "<group>"; };
 		A6DCFEB31AC059E7007E86D1 /* STTrie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STTrie.swift; sourceTree = "<group>"; };
+		A6DCFEB51AC05A05007E86D1 /* STNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				A6DCFE9C1AC05878007E86D1 /* SuperTrie.h */,
 				A6DCFEB31AC059E7007E86D1 /* STTrie.swift */,
+				A6DCFEB51AC05A05007E86D1 /* STNode.swift */,
 				A6DCFE9A1AC05878007E86D1 /* Supporting Files */,
 			);
 			path = SuperTrie;
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6DCFEB61AC05A05007E86D1 /* STNode.swift in Sources */,
 				A6DCFEB41AC059E7007E86D1 /* STTrie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
