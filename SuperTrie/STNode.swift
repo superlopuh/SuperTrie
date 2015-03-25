@@ -13,8 +13,8 @@ public class STNode<N, E: Hashable> {
     typealias NodeValueType = N
     
     // Only accepting nodes have values
-    var nodeValue: N?
-    var nextNodeDict: [E:STNode<N,E>] = [:]
+    public var nodeValue: N?
+    public var nextNodeDict: [E:STNode<N,E>] = [:]
     
     init(value: N?) {
         self.nodeValue = value

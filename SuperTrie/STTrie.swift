@@ -12,13 +12,13 @@ public class STTrie<N, E: Hashable> {
     typealias EdgeValueType = E
     typealias NodeValueType = N
     
-    var root = STNode<N, E>(value: nil)
+    public let root = STNode<N, E>(value: nil)
     
-    init() {
+    public init() {
         
     }
     
-    func addWord<C : CollectionType where C.Generator.Element == E>(word: C, nodeValue: N) {
+    public func addWord<C : CollectionType where C.Generator.Element == E>(word: C, nodeValue: N) {
         var currentNode = root
         var gen = word.generate()
         
