@@ -19,9 +19,7 @@ public class STTrie<N, E: Hashable> {
     }
     
     public init<W: SequenceType, WPS: SequenceType where W.Generator.Element == E, WPS.Generator.Element == (N,W)>(wordPairs: WPS) {
-        for (nodeValue, word) in wordPairs {
-            addWord(word, nodeValue: nodeValue)
-        }
+        addWordPairs(wordPairs)
     }
     
     public func addWordPairs<W: SequenceType, WPS: SequenceType where W.Generator.Element == E, WPS.Generator.Element == (N,W)>(wordPairs: WPS) {
