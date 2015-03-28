@@ -18,6 +18,13 @@ public class STTrie<N, E: Hashable> {
         
     }
     
+    public init<W: SequenceType, S: SequenceType where W.Generator.Element == E, S.Generator.Element == W>(words: S, endNodeFunc: W -> N) {
+        for word in words {
+            let nodeValue = endNodeFunc(word)
+            addWord(word, nodeValue: nodeValue)
+        }
+    }
+    
     public func addWord<W : SequenceType where W.Generator.Element == E>(word: W, nodeValue: N) {
         var currentNode = root
         var gen = word.generate()
