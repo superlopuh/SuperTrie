@@ -18,9 +18,8 @@ public class STTrie<N, E: Hashable> {
         
     }
     
-    public init<W: SequenceType, S: SequenceType where W.Generator.Element == E, S.Generator.Element == W>(words: S, endNodeFunc: W -> N) {
-        for word in words {
-            let nodeValue = endNodeFunc(word)
+    public init<W: SequenceType, WPS: SequenceType where W.Generator.Element == E, WPS.Generator.Element == (N,W)>(wordPairs: WPS) {
+        for (nodeValue, word) in wordPairs {
             addWord(word, nodeValue: nodeValue)
         }
     }
