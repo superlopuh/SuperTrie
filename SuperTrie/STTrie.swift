@@ -24,6 +24,12 @@ public class STTrie<N, E: Hashable> {
         }
     }
     
+    public func addWordPairs<W: SequenceType, WPS: SequenceType where W.Generator.Element == E, WPS.Generator.Element == (N,W)>(wordPairs: WPS) {
+        for (nodeValue, word) in wordPairs {
+            addWord(word, nodeValue: nodeValue)
+        }
+    }
+
     public func addWord<W : SequenceType where W.Generator.Element == E>(word: W, nodeValue: N) {
         var currentNode = root
         var gen = word.generate()
