@@ -18,7 +18,7 @@ public class STTrie<N, E: Hashable> {
         
     }
     
-    public func addWord<C : CollectionType where C.Generator.Element == E>(word: C, nodeValue: N) {
+    public func addWord<W : SequenceType where W.Generator.Element == E>(word: W, nodeValue: N) {
         var currentNode = root
         var gen = word.generate()
         
