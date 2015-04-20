@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class STNode<N, E: Hashable> {
+public final class STNode<N, E: Hashable> {
     typealias EdgeValueType = E
     typealias NodeValueType = N
     

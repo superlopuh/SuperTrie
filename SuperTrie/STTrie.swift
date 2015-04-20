@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class STTrie<N, E: Hashable> {
+public final class STTrie<N, E: Hashable> {
     typealias EdgeValueType = E
     typealias NodeValueType = N
     
