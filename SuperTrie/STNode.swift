@@ -18,16 +18,6 @@ public final class STNode<N, E: Hashable> {
         self.nodeValue = value
     }
     
-    public init<W: SequenceType, WPS: SequenceType where W.Generator.Element == E, WPS.Generator.Element == (N,W)>(wordPairs: WPS) {
-        addWordPairs(wordPairs)
-    }
-    
-    public func addWordPairs<W: SequenceType, WPS: SequenceType where W.Generator.Element == E, WPS.Generator.Element == (N,W)>(wordPairs: WPS) {
-        for (nodeValue, word) in wordPairs {
-            addWord(word, nodeValue: nodeValue)
-        }
-    }
-    
     public func addWord<W : SequenceType where W.Generator.Element == E>(word: W, nodeValue: N) {
         addWord(word.generate(), nodeValue: nodeValue)
     }
@@ -48,6 +38,19 @@ public final class STNode<N, E: Hashable> {
         } else {
             // Add empty string, or, make accepting
             self.nodeValue = nodeValue
+        }
+    }
+}
+
+public extension STNode {
+    public convenience init<W: SequenceType, WPS: SequenceType where W.Generator.Element == E, WPS.Generator.Element == (N,W)>(wordPairs: WPS) {
+        self.init()
+        addWordPairs(wordPairs)
+    }
+    
+    public func addWordPairs<W: SequenceType, WPS: SequenceType where W.Generator.Element == E, WPS.Generator.Element == (N,W)>(wordPairs: WPS) {
+        for (nodeValue, word) in wordPairs {
+            addWord(word, nodeValue: nodeValue)
         }
     }
 }
