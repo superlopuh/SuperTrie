@@ -35,12 +35,15 @@ public final class STNode<N, E: Hashable> {
     public func addWord<WG: GeneratorType where WG.Element == E>(var wordGenerator: WG, nodeValue: N) {
         if let nextCharacter = wordGenerator.next() {
             if let child = nextNodeDict[nextCharacter] {
-                // Create what is left of the word to the child
+                // Add what is left of the word to the child
                 child.addWord(wordGenerator, nodeValue: nodeValue)
             } else {
-                // Create and add child
-                let newNode = STNode<N,E>()
-                nextNodeDict[nextCharacter] = newNode
+                // Create new child
+                let newChild = STNode<N,E>()
+                // Add what is left of the word to the child
+                newChild.addWord(wordGenerator, nodeValue: nodeValue)
+                // Add new child to node
+                nextNodeDict[nextCharacter] = newChild
             }
         } else {
             // Add empty string, or, make accepting
