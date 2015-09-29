@@ -17,24 +17,22 @@ public final class STNode<N, E: Hashable> {
     init(value: N? = nil) {
         self.nodeValue = value
     }
-    
+}
+
+public extension STNode {
     public func addWord<W : SequenceType where W.Generator.Element == E>(word: W, nodeValue: N) {
         addWord(word.generate(), nodeValue: nodeValue)
     }
     
     public func addWord<WG: GeneratorType where WG.Element == E>(var wordGenerator: WG, nodeValue: N) {
         if let nextCharacter = wordGenerator.next() {
-            if let child = nextNodeDict[nextCharacter] {
-                // Add what is left of the word to the child
-                child.addWord(wordGenerator, nodeValue: nodeValue)
-            } else {
-                // Create new child
-                let newChild = STNode<N,E>()
-                // Add what is left of the word to the child
-                newChild.addWord(wordGenerator, nodeValue: nodeValue)
-                // Add new child to node
-                nextNodeDict[nextCharacter] = newChild
+            // Add child for nextCharacter if it doesn't exist
+            if nil == nextNodeDict[nextCharacter] {
+                nextNodeDict[nextCharacter] = STNode<N,E>()
             }
+            
+            // Add what is left of the word to the child
+            nextNodeDict[nextCharacter]!.addWord(wordGenerator, nodeValue: nodeValue)
         } else {
             // Add empty string, or, make accepting
             self.nodeValue = nodeValue
